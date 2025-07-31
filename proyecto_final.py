@@ -7,7 +7,38 @@ from PIL import Image, ImageFilter
 import json
 import os
 import sys
+qss_string = """
+    QWidget {
+        background-color: #333333; /* Fondo oscuro para toda la ventana */
+        color: #F0F0F0; /* Color de texto claro por defecto */
+    }
 
+    #myLabel { /* Estilo específico para el QLabel con objectName="myLabel" */
+        background-color: #555555;
+        color: #ADD8E6; /* Azul claro */
+        border: 1px solid #777777;
+    }
+
+    QPushButton { /* Estilo para todos los QPushButton */
+        background-color: #5cb85c; /* Verde por defecto para los botones */
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    QPushButton:hover { /* Estilo al pasar el ratón por encima */
+        background-color: #4cae4c;
+    }
+
+    #blueButton { /* Estilo específico para el botón con objectName="blueButton" */
+        background-color: #007bff; /* Azul oscuro */
+    }
+
+    #blueButton:hover {
+        background-color: #0056b3;
+    }
+    """
 # ---------- Estructura de datos principal ----------
 # Aquí se guardarán las notas en forma de diccionario. Cada entrada debe tener un título, contenido y opcionalmente etiquetas.
 # Ejemplo: notes["Mi Nota"] = {"contenido": "texto de la nota", "etiquetas": ["importante"]}
